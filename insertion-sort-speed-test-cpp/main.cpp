@@ -1,9 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
+int num_tests = 5;
 const int max_length = 10000;
 int list[max_length];
 
@@ -32,15 +35,23 @@ void insertionSort() {
 
 int main()
 {
-    double t1, t2;
+    double t1, t2, time_taken, sum, average_time;
+    sum = 0;
 
-    for(unsigned int j = 1; j <= 3; j++) {
+    for(int j = 1; j <= num_tests; j++) {
         read();
         t1 = clock();
         insertionSort();
         t2 = clock();
-        cout << "Test " << j << ":" << " time taken to sort 10,000 random numbers using insertion sort: " << (t2 - t1)/CLK_TCK << " sec\n";
+        time_taken = (t2 - t1) / CLK_TCK;
+        cout << "Test " << j << ":" << " time taken to sort 10,000 random numbers using insertion sort: " << time_taken << " sec\n";
+        sum = sum + time_taken;
     }
+
+    average_time = sum / num_tests;
+
+    string short_average_time = to_string(average_time);
+    cout << "Average time taken taken: " << short_average_time.substr(0, 5) << " sec" << endl;
 
     return 0;
 }
