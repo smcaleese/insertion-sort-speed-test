@@ -24,7 +24,6 @@ def insertionSort(arr):
         arr[p] = v
         i = i + 1
 
-
 b = []
 total = 0
 x = 1
