@@ -10,5 +10,5 @@ Running both projects shows that C++ is about forty times faster than python at 
 ## Instructions for running the Python project
 - Requirement: make sure python is installed on your terminal first.
 1. Go to the directory of the python project in your terminal.
-2. Run the python project from your terminal using this command.
+2. Go to the directory of the project in your terminal.
 3. Run `python insertion-sort-speed-test.py < ten-thousand-random-numbers.txt`.
